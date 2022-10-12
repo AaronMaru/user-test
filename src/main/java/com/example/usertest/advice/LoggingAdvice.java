@@ -15,6 +15,10 @@ import java.util.Date;
 @Component
 public class LoggingAdvice {
 
+    /**
+     * We set log in controller and Service
+     * and for class StructureRS not is log target
+     */
     @Pointcut(value = "execution(* com.example.usertest.controller.*.*(..) )\"" +
             " + \"&& @target(* com.example.usertest.service.user.UserIP.*(..) )" +
             " + \"&& !@target(com.example.usertest.response.StructureRS)")
