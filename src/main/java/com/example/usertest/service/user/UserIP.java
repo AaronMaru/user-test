@@ -32,7 +32,7 @@ public class UserIP extends BaseServiceIP implements UserSV {
         BeanUtils.copyProperties(userRQ, user);
         userRP.save(user);
 
-        return responseBody(HttpStatus.OK, ResponseConstant.SUCCESS);
+        return responseBody(HttpStatus.CREATED, ResponseConstant.SUCCESS);
 
     }
 }

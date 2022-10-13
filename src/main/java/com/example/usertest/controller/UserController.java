@@ -4,6 +4,8 @@ import com.example.usertest.request.UserRQ;
 import com.example.usertest.response.StructureRS;
 import com.example.usertest.service.user.UserSV;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -24,10 +26,13 @@ public class UserController {
     }
 
     @PostMapping
-    public StructureRS store(@Valid @RequestBody UserRQ userRQ,
+    public ResponseEntity<?> store(@Valid @RequestBody UserRQ userRQ,
                              @RequestParam(defaultValue = "sport") String hobby) {
+
         userRQ.setHobby(hobby);
-        return userSV.addUser(userRQ);
+        StructureRS structureRS = userSV.addUser(userRQ);
+
+        return new ResponseEntity<>(structureRS, HttpStatus.CREATED);
 
     }
 

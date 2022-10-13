@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class User extends BaseEntity {
 
     private String name;
-    private String age;
+    private int age;
     private String country;
     private String hobby;
 
