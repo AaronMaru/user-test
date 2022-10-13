@@ -2,7 +2,7 @@
 
 ### Project architecture
 
-![micro](https://www.researchgate.net/profile/Sr-Swamy/publication/341151097/figure/fig2/AS:887752266616836@1588668042046/Fig-2-Architecture-flow-of-spring-boot-Applications-Spring-boot-uses-all-the-features.ppm)
+![micro](./src/main/resources/images/architecture.png)
 
 ### Tools and Technologies
 
