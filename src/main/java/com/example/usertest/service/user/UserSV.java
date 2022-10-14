@@ -12,7 +12,7 @@ public interface UserSV {
      * @param id
      * @return
      */
-    StructureRS getUserById(Long id);
+    StructureRS getUserById(int id);
 
     /**
      * This method is for add User

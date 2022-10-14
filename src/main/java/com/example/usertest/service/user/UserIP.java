@@ -7,11 +7,14 @@ import com.example.usertest.repository.UserRP;
 import com.example.usertest.request.UserRQ;
 import com.example.usertest.response.StructureRS;
 import com.example.usertest.service.BaseServiceIP;
+import com.example.usertest.service.SequenceGeneratorService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+
+import static com.example.usertest.domain.User.SEQUENCE_NAME;
 
 @Service
 public class UserIP extends BaseServiceIP implements UserSV {
@@ -22,8 +25,11 @@ public class UserIP extends BaseServiceIP implements UserSV {
     @Autowired
     private UserRP userRP;
 
+    @Autowired
+    private SequenceGeneratorService service;
+
     @Override
-    public StructureRS getUserById(Long id) {
+    public StructureRS getUserById(int id) {
 
         User user = userRP.findById(id).orElse(null);
 
@@ -40,6 +46,7 @@ public class UserIP extends BaseServiceIP implements UserSV {
 
         User user = new User();
         BeanUtils.copyProperties(userRQ, user);
+        user.setId(service.getSequenceNumber(SEQUENCE_NAME));
         userRP.save(user);
 
         return responseBody(HttpStatus.CREATED, ResponseConstant.SUCCESS);

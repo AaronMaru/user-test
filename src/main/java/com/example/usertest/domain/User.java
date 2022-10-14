@@ -4,18 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Setter
 @Getter
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "users")
-public class User extends BaseEntity {
+@Document(collection = "user")
+public class User extends BaseEntity{
+    @Transient
+    public static final String SEQUENCE_NAME = "user_sequence";
 
+    @Id
+    private int id;
     private String name;
     private int age;
     private String country;

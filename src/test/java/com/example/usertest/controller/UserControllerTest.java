@@ -88,7 +88,7 @@ public class UserControllerTest {
         //given
 
         User user = new User();
-        user.setId(1L);
+        user.setId(1);
         user.setName("Sai Vichet");
         user.setAge(30);
         user.setCountry("Cambodia");
@@ -99,7 +99,7 @@ public class UserControllerTest {
         structureRS.setMessage(SUCCESS);
         structureRS.setData(user);
 
-        given(userSV.getUserById(1L)).willReturn(structureRS);
+        given(userSV.getUserById(1)).willReturn(structureRS);
 
         //then
         MvcResult mvcResult = mockMvc.perform(get("/users/1").contentType(MediaType.APPLICATION_JSON))

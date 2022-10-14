@@ -51,7 +51,7 @@ Requirements:
   - UserRQ
   - UserIP
   - application.properties
-  Bonuses:
+### Bonuses:
 * user a non*relational DB in order to save the users!
   - H2
 * use AOP

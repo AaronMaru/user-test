@@ -19,7 +19,7 @@ public class UserController {
 
 
     @GetMapping("{id}")
-    public StructureRS show(@PathVariable("id") Long id) {
+    public StructureRS show(@PathVariable("id") int id) {
 
         return userSV.getUserById(id);
 
