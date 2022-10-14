@@ -64,6 +64,25 @@ public class UserControllerTest {
     }
 
     @Test
+    public void addUserTestBadRequest() throws Exception {
+
+        //given
+        UserRQ userRQ = new UserRQ();
+        userRQ.setAge(30);
+        userRQ.setCountry("Cambodia");
+        userRQ.setHobby("Sport");
+
+        //then
+        MvcResult mvcResult = mockMvc.perform(post("/users").content(asJsonString(userRQ))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("message", is("Name is mandatory"))).andReturn();
+
+        System.out.println(mvcResult);
+    }
+
+    @Test
     public void getUserByIDTest() throws Exception {
 
         //given
