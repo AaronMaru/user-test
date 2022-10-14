@@ -53,7 +53,7 @@ Requirements:
   - application.properties
 ### Bonuses:
 * user a non*relational DB in order to save the users!
-  - H2
+  - mongodb
 * use AOP
   - LoggingAdvice: for set Log
 * documentation/UML/schemas to explain the architecture
