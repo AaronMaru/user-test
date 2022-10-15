@@ -44,6 +44,7 @@ Requirements:
   + Javadoc
     - UserSV
     - LoggingAdvice
+    - POM (Using OpenAPI 3.0) swagger
 * unit tests
   - UserControllerTest
 

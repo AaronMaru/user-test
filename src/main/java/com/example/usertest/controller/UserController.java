@@ -27,7 +27,7 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<?> store(@Valid @RequestBody UserRQ userRQ,
-                             @RequestParam(defaultValue = "sport") String hobby) {
+                                   @RequestParam(defaultValue = "sport") String hobby) {
 
         userRQ.setHobby(hobby);
         StructureRS structureRS = userSV.addUser(userRQ);
