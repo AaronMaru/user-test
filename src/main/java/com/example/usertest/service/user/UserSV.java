@@ -10,14 +10,14 @@ public interface UserSV {
     /**
      * This method is for get User Record by Id
      * @param id
-     * @return
+     * @return StructureRS
      */
     StructureRS getUserById(int id);
 
     /**
      * This method is for add User
      * @param userRQ
-     * @return
+     * @return StructureRS
      */
     StructureRS addUser(UserRQ userRQ);
 

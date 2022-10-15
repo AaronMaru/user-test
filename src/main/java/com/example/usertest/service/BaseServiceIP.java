@@ -18,7 +18,7 @@ public class BaseServiceIP implements BaseService {
      * response body follow base structure response
      * -----------------------------------------------------------------------------------------------------------------
      *
-     * @return
+     * @return StructureRS
      */
     @Override
     public StructureRS responseBodyWithSuccessMessage() {
@@ -31,7 +31,7 @@ public class BaseServiceIP implements BaseService {
      * -----------------------------------------------------------------------------------------------------------------
      *
      * @param status
-     * @return
+     * @return StructureRS
      */
     @Override
     public StructureRS responseBody(HttpStatus status) {
@@ -45,7 +45,7 @@ public class BaseServiceIP implements BaseService {
      *
      * @param status
      * @param message
-     * @return
+     * @return StructureRS
      */
     @Override
     public StructureRS responseBody(HttpStatus status, String message) {
@@ -60,7 +60,7 @@ public class BaseServiceIP implements BaseService {
      * @param status
      * @param message
      * @param data
-     * @return
+     * @return StructureRS
      */
     @Override
     public StructureRS responseBody(HttpStatus status, String message, Object data) {
@@ -76,7 +76,7 @@ public class BaseServiceIP implements BaseService {
      * @param message
      * @param data
      * @param paging
-     * @return
+     * @return StructureRS
      */
     public StructureRS responseBody(HttpStatus status, String message, Object data, PagingRS paging) {
         structureRS.setStatus(status.value());
