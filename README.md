@@ -58,3 +58,5 @@ Requirements:
 * use AOP
   - LoggingAdvice: for set Log
 * documentation/UML/schemas to explain the architecture
+
+Hello from Jenkin AWS

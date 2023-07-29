@@ -3,7 +3,7 @@ package com.example.usertest.controller;
 import com.example.usertest.request.UserRQ;
 import com.example.usertest.response.StructureRS;
 import com.example.usertest.service.user.UserSV;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +12,10 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("users")
+@RequiredArgsConstructor
 public class UserController {
 
-    @Autowired
-    private UserSV userSV;
-
+    private final UserSV userSV;
 
     @GetMapping("{id}")
     public StructureRS show(@PathVariable("id") int id) {
